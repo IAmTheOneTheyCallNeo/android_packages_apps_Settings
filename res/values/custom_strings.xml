@@ -346,4 +346,5 @@
     <string name="swap_volume_buttons">Swap volume buttons rotation based</string>
     <string name="swap_volume_buttons_summary">Change the order of volume buttons according of screen rotation</string>
 
+    <string name="screenshot_shutter_sound_title">Screenshot shutter sound</string>
 </resources>
