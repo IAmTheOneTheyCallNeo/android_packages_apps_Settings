@@ -66,7 +66,7 @@
                 android:key="navbar_height_portrait"
                 android:title="@string/portrait_title"
                 settings:maximum="135"
-                settings:minimum="65"
+                settings:minimum="20"
                 settings:units="%" 
                 android:persistent="false"/>
 
@@ -74,7 +74,7 @@
                 android:key="navbar_height_landscape"
                 android:title="@string/land_hor_title"
                 settings:maximum="135"
-                settings:minimum="65"
+                settings:minimum="20"
                 settings:units="%"
                 android:persistent="false"/>
 
