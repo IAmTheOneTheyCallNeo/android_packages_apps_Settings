@@ -21,6 +21,11 @@
     android:title="@string/custom_settings_title">
 
     <Preference
+        android:key="device_parts"
+        android:title="@string/custom_device_parts"
+        android:fragment="org.omnirom.device.DeviceParts" />
+
+    <Preference
         android:key="navigation_bar"
         android:fragment="com.dirtyunicorns.tweaks.fragments.NavigationBar"
         android:title="@string/navbar_settings_title" />

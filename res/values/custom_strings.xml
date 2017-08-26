@@ -23,6 +23,7 @@
     <string name="navbar_settings_title">Navbar options</string>
     <string name="power_menu_settings_title">Power menu options</string>
     <string name="status_bar_settings_title">Status bar</string>
+    <string name="custom_device_parts">Device features</string>
 
     <string name="notification_log_summary">Show notifications history log</string>
 

@@ -2404,6 +2404,19 @@
                 android:value="com.android.settings.custom.CustomSettings" />
         </activity>
 
+        <activity android:name="Settings$DevicePartsActivity"
+                  android:label="@string/custom_device_parts"
+                  android:taskAffinity="">
+            <intent-filter android:priority="2">
+                <action android:name="com.android.settings.action.SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                   android:value="com.android.settings.category.ia.custom"/>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                   android:value="org.omnirom.device.DeviceParts" />
+        </activity>
+
         <!-- Battery light settings -->
         <activity android:name="com.android.settings.custom.BatteryLightSettings" />
 

@@ -193,6 +193,7 @@ public class Settings extends SettingsActivity {
 
     public static class CustomSettingsActivity extends SettingsActivity {}
     public static class CustomSettings extends SettingsActivity { /* empty */ }
+    public static class DevicePartsActivity extends SettingsActivity { /* empty */ }
 
     // Custom categories
     public static class NavigationSettingsActivity extends SettingsActivity { /* empty */ }

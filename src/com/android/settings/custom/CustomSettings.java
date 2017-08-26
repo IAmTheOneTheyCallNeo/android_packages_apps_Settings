@@ -1,6 +1,8 @@
 package com.android.settings.custom;
 
 import android.content.ContentResolver;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -19,6 +21,7 @@ public class CustomSettings extends SettingsPreferenceFragment implements
     public static final String CATEGORY_CUSTOM = "com.android.settings.category.ia.custom";
 
     private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
+    private static final String KEY_DEVICE_PARTS = "device_parts";
 
     private ListPreference mScreenOffAnimation;
 
@@ -40,6 +43,13 @@ public class CustomSettings extends SettingsPreferenceFragment implements
         mScreenOffAnimation.setValue(String.valueOf(screenOffStyle));
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
         mScreenOffAnimation.setOnPreferenceChangeListener(this);
+
+        if (!isDevicePartsSupported(getContext())) {
+            Preference pref = getPreferenceScreen().findPreference(KEY_DEVICE_PARTS);
+            if (pref != null) {
+                getPreferenceScreen().removePreference(pref);
+            }
+        }
     }
 
     @Override
@@ -54,5 +64,15 @@ public class CustomSettings extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    private static boolean isDevicePartsSupported(Context context) {
+        boolean devicePartsSupported = false;
+        try {
+            devicePartsSupported = context.getPackageManager().getPackageInfo(
+                    "org.omnirom.device", 0).versionCode > 0;
+        } catch (PackageManager.NameNotFoundException e) {
+        }
+        return devicePartsSupported;
     }
 }
