@@ -17,6 +17,7 @@
 
     <!-- Custom menus -->
     <string name="header_category_custom">Custom settings</string>
+    <string name="battery_light_settings">Battery led settings</string>
     <string name="category_custom_summary">Custom features</string>
     <string name="custom_settings_title">Tweaks</string>
     <string name="power_menu_settings_title">Power menu options</string>
@@ -37,4 +38,13 @@
     <string name="set">Set</string>
     <string name="color_default">Default</string>
 
+    <!-- Battery light -->
+    <string name="battery_light_enable">Enable</string>
+    <string name="battery_light_allow_on_dnd_title">Battery light in Do Not Disturb mode</string>
+    <string name="battery_light_low_blinking_title">Blinking light on low battery</string>
+    <string name="battery_light_cat">Battery light color when charging</string>
+    <string name="battery_light_low_color">Low battery</string>
+    <string name="battery_light_medium_color">Medium battery</string>
+    <string name="battery_light_full_color">Almost full battery</string>
+    <string name="battery_light_reallyfull_color">Full (100) battery</string>
 </resources>
