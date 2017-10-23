@@ -329,4 +329,8 @@
     <!-- Development settings -->
     <string name="show_dev_already_enabled">No Need, Development settings are enabled by default.</string>
 
+    <string name="twilight_mode_location_dialog">Location disabled</string>
+    <string name="twilight_mode_location_disabled">Location access is disabled</string>
+    <string name="twilight_mode_location_enable">Enable</string>
+
 </resources>
