@@ -64,4 +64,9 @@
     <string name="screen_off_animation_default">Default</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
+
+    <!-- Heads up -->
+    <string name="heads_up_title">Heads up</string>
+    <string name="heads_up_summary_enabled">Pop-up notifications are enabled</string>
+    <string name="heads_up_summary_disabled">Pop-up notifications are disabled</string>
 </resources>
