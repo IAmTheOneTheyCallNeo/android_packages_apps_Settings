@@ -91,6 +91,8 @@
     <string name="navigation_bar_left_title">Left-handed mode</string>
     <string name="navigation_bar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
     <string name="smartbar_interface">SmartBar</string>
+    <string name="smartbar_double_tap_sleep_title">Double tap to sleep</string>
+    <string name="smartbar_double_tap_sleep_summary">Double tap on empty navbar areas to sleep</string>
     <string name="icon_pack_picker_dialog_title">Icon packs</string>
     <string name="image_exceeds_max_allowed_size">Image must not exceed 512x512</string>
     <string name="invalid_icon_from_uri">Unable to load image from content provider</string>
