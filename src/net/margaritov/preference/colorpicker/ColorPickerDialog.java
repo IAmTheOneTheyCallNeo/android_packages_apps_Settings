@@ -18,6 +18,7 @@
 package net.margaritov.preference.colorpicker;
 
 import android.app.Dialog;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
@@ -53,15 +54,21 @@ public class ColorPickerDialog
     private EditText mHex;
     private ImageButton mSetButton;
 
+    private boolean mShowLedPreview;
+
+    private NotificationManager mNoMan;
+    private Context mContext;
+
     private OnColorChangedListener mListener;
 
     public interface OnColorChangedListener {
         public void onColorChanged(int color);
     }
 
-    public ColorPickerDialog(Context context, int initialColor) {
+    public ColorPickerDialog(Context context, int initialColor, boolean showLedPreview) {
         super(context);
-
+        mContext = context;
+        mShowLedPreview = showLedPreview;
         init(initialColor);
     }
 
@@ -77,6 +84,8 @@ public class ColorPickerDialog
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
+        mNoMan = (NotificationManager)
+                mContext.getSystemService(Context.NOTIFICATION_SERVICE);
 
         View layout = inflater.inflate(R.layout.dui_dialog_color_picker, null);
 
@@ -110,6 +119,7 @@ public class ColorPickerDialog
         mColorPicker.setOnColorChangedListener(this);
         mOldColor.setColor(color);
         mColorPicker.setColor(color, true);
+        showLed(color);
 
         setColorAndClickAction(mWhite, Color.WHITE);
         setColorAndClickAction(mBlack, Color.BLACK);
@@ -148,10 +158,23 @@ public class ColorPickerDialog
         } catch (Exception e) {
 
         }
-        /*
-         * if (mListener != null) { mListener.onColorChanged(color); }
-         */
+        showLed(color);
+    }
 
+    private void showLed(int color) {
+        if (mShowLedPreview) {
+            if (color == 0xFFFFFFFF) {
+                // argb white doesn't work
+                color = 0xffffff;
+            }
+            mNoMan.forceShowLedLight(color);
+        }
+    }
+
+    private void switchOffLed() {
+        if (mShowLedPreview) {
+            mNoMan.forceShowLedLight(-1);
+        }
     }
 
     public void setAlphaSliderVisible(boolean visible) {
@@ -194,6 +217,13 @@ public class ColorPickerDialog
             }
         }
         dismiss();
+        switchOffLed();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        switchOffLed();
     }
 
     @Override
@@ -202,6 +232,7 @@ public class ColorPickerDialog
         state.putInt("old_color", mOldColor.getColor());
         state.putInt("new_color", mNewColor.getColor());
         dismiss();
+        switchOffLed();
         return state;
     }
 
