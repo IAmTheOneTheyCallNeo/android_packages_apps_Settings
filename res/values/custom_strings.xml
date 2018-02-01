@@ -22,6 +22,8 @@
     <string name="custom_settings_title">Tweaks</string>
     <string name="power_menu_settings_title">Power menu options</string>
 
+    <string name="notification_log_summary">Show notifications history log</string>
+
     <!-- Power Menu -->
     <string name="powermenu_restart_title">Restart</string>
     <string name="powermenu_advanced_reboot_title">Advanced Reboot</string>

@@ -61,4 +61,10 @@
             android:summary="@string/summary_placeholder"/>
 
     </PreferenceCategory>
+
+    <Preference
+        android:title="@string/notification_log_title"
+        android:summary="@string/notification_log_summary"
+        android:fragment="com.android.settings.notification.NotificationStation" />
+
 </PreferenceScreen>
