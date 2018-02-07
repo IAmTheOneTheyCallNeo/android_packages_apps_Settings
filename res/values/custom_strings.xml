@@ -342,4 +342,8 @@
     <!-- Wireless charging sound -->
     <string name="wireless_charging_sounds_title">Wireless charging sounds</string>
 
+    <!-- Volume swap -->
+    <string name="swap_volume_buttons">Swap volume buttons rotation based</string>
+    <string name="swap_volume_buttons_summary">Change the order of volume buttons according of screen rotation</string>
+
 </resources>

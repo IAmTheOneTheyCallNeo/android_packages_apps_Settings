@@ -52,25 +52,32 @@
                 android:key="vibrate_when_ringing"
                 android:title="@string/vibrate_when_ringing_title" />
 
+        <!-- Vloume swap rotation -->
+        <com.android.settings.preferences.SystemSettingSwitchPreference
+          android:key="swap_volume_buttons"
+          android:title="@string/swap_volume_buttons"
+          android:summary="@string/swap_volume_buttons_summary"
+          android:defaultValue="true" />
+
         <!-- Interruptions -->
         <com.android.settingslib.RestrictedPreference
                 android:key="zen_mode"
                 android:title="@string/zen_mode_settings_title"
                 settings:useAdminDisabledSummary="true"
                 settings:keywords="@string/keywords_sounds_and_notifications_interruptions"
-                android:fragment="com.android.settings.notification.ZenModeSettings"
-                settings:allowDividerAbove="true" />
-
-        <!-- Phone ringtone -->
-        <com.android.settings.DefaultRingtonePreference
-            android:key="ringtone"
-            android:title="@string/ringtone_title"
-            android:dialogTitle="@string/ringtone_title"
-            android:summary="@string/summary_placeholder"
-            android:ringtoneType="ringtone"
-            settings:allowDividerAbove="true" />
+                android:fragment="com.android.settings.notification.ZenModeSettings" />
 
     </PreferenceCategory>
+
+    <!-- Phone ringtone -->
+    <com.android.settings.DefaultRingtonePreference
+        android:key="ringtone"
+        android:title="@string/ringtone_title"
+        android:dialogTitle="@string/ringtone_title"
+        android:summary="@string/summary_placeholder"
+        android:ringtoneType="ringtone"
+        settings:allowDividerAbove="true"
+        android:order="-99" />
 
     <!-- Default notification ringtone -->
     <com.android.settings.DefaultRingtonePreference
@@ -79,7 +86,7 @@
         android:dialogTitle="@string/notification_ringtone_title"
         android:summary="@string/summary_placeholder"
         android:ringtoneType="notification"
-        android:order="-99"/>
+        android:order="-98"/>
 
     <!-- Default alarm ringtone -->
     <com.android.settings.DefaultRingtonePreference
@@ -89,7 +96,7 @@
         android:summary="@string/summary_placeholder"
         android:persistent="false"
         android:ringtoneType="alarm"
-        android:order="-98"/>
+        android:order="-97"/>
 
     <!-- Other sounds -->
     <PreferenceCategory
