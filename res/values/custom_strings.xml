@@ -270,4 +270,10 @@
     <string name="status_bar_battery_style_dotted_circle">Dotted circle</string>
     <string name="status_bar_battery_style_text">Text</string>
     <string name="status_bar_battery_style_hidden">Hidden</string>
+
+    <!-- SystemUI theme -->
+    <string name="systemui_theme_style_title">SystemUI theme</string>
+    <string name="systemui_theme_style_auto">Automatic (wallpaper based)</string>
+    <string name="systemui_theme_style_light">Light</string>
+    <string name="systemui_theme_style_dark">Dark</string>
 </resources>
