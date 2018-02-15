@@ -27,6 +27,17 @@
         <intent android:action="com.android.intent.action.SHOW_BRIGHTNESS_DIALOG" />
     </Preference>
 
+    <ListPreference
+        android:key="systemui_theme_style"
+        android:title="@string/systemui_theme_style_title"
+        android:entries="@array/systemui_theme_style_entries"
+        android:entryValues="@array/systemui_theme_style_values"
+        android:persistent="false" />
+
+    <Preference
+        android:key="accent_picker"
+        android:title="@string/theme_accent_picker_title" />
+
     <com.android.settings.display.NightDisplayPreference
         android:key="night_display"
         android:title="@string/night_display_title"
@@ -41,13 +52,6 @@
         android:title="@string/auto_brightness_title"
         settings:keywords="@string/keywords_display_auto_brightness"
         android:summary="@string/auto_brightness_summary" />
-
-    <ListPreference
-        android:key="systemui_theme_style"
-        android:title="@string/systemui_theme_style_title"
-        android:entries="@array/systemui_theme_style_entries"
-        android:entryValues="@array/systemui_theme_style_values"
-        android:persistent="false" />
 
     <com.android.settingslib.RestrictedPreference
         android:key="wallpaper"
