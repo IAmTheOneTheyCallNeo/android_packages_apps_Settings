@@ -41,6 +41,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ListPreference mStatusBarBatteryShowPercent;
     private ListPreference mStatusBarBattery;
     private ListPreference mTickerMode;
+    private ListPreference mTickerAnimation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 0, UserHandle.USER_CURRENT);
         mTickerMode.setValue(String.valueOf(tickerMode));
         mTickerMode.setSummary(mTickerMode.getEntry());
+
+        mTickerAnimation = (ListPreference) findPreference("status_bar_ticker_animation_mode");
+        mTickerAnimation.setOnPreferenceChangeListener(this);
+        int tickerAnimationMode = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE,
+                1, UserHandle.USER_CURRENT);
+        mTickerAnimation.setValue(String.valueOf(tickerAnimationMode));
+        mTickerAnimation.setSummary(mTickerAnimation.getEntry());
     }
 
     @Override
@@ -108,6 +117,15 @@ public class StatusBar extends SettingsPreferenceFragment implements
             int index = mTickerMode.findIndexOfValue((String) newValue);
             mTickerMode.setSummary(
                     mTickerMode.getEntries()[index]);
+            return true;
+        } else if (preference.equals(mTickerAnimation)) {
+            int tickerAnimationMode = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE, tickerAnimationMode,
+                            UserHandle.USER_CURRENT);
+            int index = mTickerAnimation.findIndexOfValue((String) newValue);
+            mTickerAnimation.setSummary(
+                    mTickerAnimation.getEntries()[index]);
             return true;
         }
         return false;
